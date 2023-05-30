@@ -37,7 +37,6 @@ resource "aws_subnet" "Terraform-Private-Subnet-1" {
   cidr_block              = var.private_subnet_1_cidr_block
   vpc_id                  = aws_vpc.Terraform-VPC.id
   availability_zone       = "${var.region}a"
-  map_public_ip_on_launch = true
   tags = {
     Name = "Terraform-Private-Subnet-1"
   }
@@ -46,7 +45,6 @@ resource "aws_subnet" "Terraform-Private-Subnet-2" {
   cidr_block              = var.private_subnet_2_cidr_block
   vpc_id                  = aws_vpc.Terraform-VPC.id
   availability_zone       = "${var.region}b"
-  map_public_ip_on_launch = true
   tags = {
     Name = "Terraform-Private-Subnet-2"
   }
@@ -55,7 +53,6 @@ resource "aws_subnet" "Terraform-Private-Subnet-3" {
   cidr_block              = var.private_subnet_3_cidr_block
   vpc_id                  = aws_vpc.Terraform-VPC.id
   availability_zone       = "${var.region}c"
-  map_public_ip_on_launch = true
   tags = {
     Name = "Terraform-Private-Subnet-3"
   }
