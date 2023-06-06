@@ -3,7 +3,7 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 data "template_file" "Bastion" {
-  template = file("bastion.sh")
+  template = file("${abspath(path.module)}/bastion.sh")
 }
 
 resource "aws_instance" "Terraform-Bastion-Host" {
