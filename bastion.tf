@@ -11,7 +11,7 @@ resource "aws_instance" "Terraform-Bastion-Host" {
   instance_type          = var.ec2_type
   subnet_id              = aws_subnet.Terraform-Public-Subnet-1.id
   vpc_security_group_ids = [aws_security_group.Terraform-Bastion-Host-Sec-Gr.id]
-  key_name               = var.key-name
+  key_name               = var.key_name
   iam_instance_profile   = aws_iam_instance_profile.Terraform-ec2connectprofile.name
   user_data              = data.template_file.Bastion.rendered
   tags = {

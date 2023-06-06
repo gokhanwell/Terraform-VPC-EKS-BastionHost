@@ -18,9 +18,9 @@ unzip awscliv2.zip
 
 mkdir .aws && cd .aws
 
-echo [default] > config && echo region = us-east-1 >> config && echo output = yaml >> config
+echo [default] > config && echo region = ${region} >> config && echo output = yaml >> config
 
-echo [default] > credentials && echo aws_access_key_id = XXXXXXXXXXXX >> credentials && echo aws_secret_access_key = XXXXXXXXXXXXXXXXX >> credentials
+echo [default] > credentials && echo aws_access_key_id = ${access_key} >> credentials && echo aws_secret_access_key = ${secret_access_key} >> credentials
 
 chmod 600 config credentials
 
@@ -42,4 +42,4 @@ mv ./kubectl /usr/local/bin/kubectl
 
 #kubeconfig
 
-aws eks update-kubeconfig --region us-east-1 --name Terraform-EKS-Cluster 
+aws eks update-kubeconfig --region ${region} --name Terraform-EKS-Cluster 

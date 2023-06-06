@@ -42,6 +42,14 @@ variable "ec2_ami" {
   default = "ami-0261755bbcb8c4a84"
 }
 
-variable "key-name" {
+variable "key_name" {
   default = "XXXXXXXXXX"
+}
+
+variable "access_key" {
+  default = "XXXXXXXXXXX"
+}
+
+variable "secret_access_key" {
+  default = "XXXXXXXXXXX"
 }
