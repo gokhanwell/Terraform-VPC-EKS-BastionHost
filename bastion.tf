@@ -4,6 +4,11 @@ data "aws_region" "current" {}
 
 data "template_file" "Bastion" {
   template = file("${abspath(path.module)}/bastion.sh")
+  vars = {
+    region            = var.region
+    access_key        = var.access_key
+    secret_access_key = var.secret_access_key
+  }
 }
 
 resource "aws_instance" "Terraform-Bastion-Host" {
